@@ -1,0 +1,22 @@
+# ADR-003 — Retry com backoff e dead letter
+
+## Status
+Decidido na reunião; semântica da contagem de tentativas pendente de confirmação.
+
+## Contexto
+Destinos externos podem ficar indisponíveis por horas. Três tentativas foram consideradas insuficientes; retry ilimitado deixa eventos presos indefinidamente. [09:15–09:17] Diego e Bruno.
+
+## Decisão
+Usar backoff de 1 min, 5 min, 30 min, 2 h e 12 h e limite anunciado de cinco tentativas. Após esgotar a política, persistir payload, falha e horário em `webhook_dead_letter`; replay manual por endpoint administrativo. [09:17–09:19] Diego e Larissa.
+
+**Ponto de revisão:** cinco intervalos implicam cinco retries após a primeira tentativa, enquanto “cinco tentativas” pode significar cinco envios totais. O RFC mantém essa ambiguidade aberta; a implementação deve fixar a convenção antes de codificar o agendamento.
+
+## Alternativas consideradas
+- Três tentativas: janela curta para indisponibilidade planejada de duas horas. [09:16] Bruno e Diego.
+- Retry indefinido: evento pode ficar pendurado para sempre. [09:15] Diego.
+- Marcar `failed` na própria outbox: poluiria a consulta de pendências; a tabela separada favorece diagnóstico e replay. [09:17–09:18] Larissa e Diego.
+
+## Consequências
+- Positiva: falhas transitórias recebem nova chance e falhas permanentes ficam visíveis.
+- Negativa: entrega pode atrasar por horas; há armazenamento e operação de replay a manter.
+
