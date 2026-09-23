@@ -16,7 +16,7 @@
 | README | [README](../README.md): ferramentas, workflow, 2 prompts e 3 ajustes concretos | Atende |
 | Integridade do código | Nenhum arquivo `src/`, `prisma/`, `tests/`, configuração ou `TRANSCRICAO.md` alterado desde a baseline | Atende |
 | Links e caminhos | Verificação local de links Markdown e de caminhos de código existente; referências a arquivos futuros estão marcadas como planejadas | Atende |
-| Git | `git diff --check` sem erro; publicar commit final e confirmar working tree limpo | Concluir na publicação |
+| Git | `git diff --check` sem erro; commit publicado no fork e working tree limpo | Atende |
 
 ## Método e limites
 
@@ -24,9 +24,9 @@ A cobertura do tracker conta unidades normativas distintas, conforme a regra exp
 
 ## Pendências de decisão mantidas no RFC
 
-1. Contagem do envio inicial nas “5 tentativas” versus cinco intervalos de backoff. [09:17] Larissa.
-2. Regra de autorização usuário→cliente ausente no JWT atual. [09:32] Larissa; `src/middlewares/auth.middleware.ts`.
-3. Semântica de assinatura durante a janela de rotação de 24 h. [09:21] Sofia.
-4. Rate limiting de saída e escala do worker foram adiados. [09:39] Larissa; [09:13] Diego.
+1. Contagem do envio inicial nas “5 tentativas” versus cinco intervalos de backoff.
+2. Regra de autorização usuário→cliente ausente no JWT atual; ver `src/middlewares/auth.middleware.ts`.
+3. Semântica de assinatura durante a janela de rotação de 24 h.
+4. Rate limiting de saída e escala do worker foram adiados.
 
 Essas pendências são parte do design submetido à revisão; não autorizam afirmar que a implementação da feature já foi codificada.

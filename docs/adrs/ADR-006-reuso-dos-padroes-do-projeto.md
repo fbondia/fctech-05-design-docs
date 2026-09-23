@@ -6,13 +6,13 @@
 Decidido na reunião; aguardando revisão do RFC.
 
 ## Contexto
-O projeto organiza domínios em controller, service, repository, routes e schemas (`src/modules/orders/`). Usa Zod (`src/modules/orders/order.schemas.ts`), `AppError` (`src/shared/errors/app-error.ts`), middleware central (`src/middlewares/error.middleware.ts`) e Pino (`src/shared/logger/index.ts`). [09:27–09:30] Bruno e Larissa.
+O projeto organiza domínios em controller, service, repository, routes e schemas (`src/modules/orders/`). Usa Zod (`src/modules/orders/order.schemas.ts`), `AppError` (`src/shared/errors/app-error.ts`), middleware central (`src/middlewares/error.middleware.ts`) e Pino (`src/shared/logger/index.ts`).
 
 ## Decisão
-Criar o módulo planejado `src/modules/webhooks` no mesmo padrão, com processador do worker no módulo e entry point planejado `src/worker.ts`. Reusar Zod, `AppError`, middleware, Pino e autenticação existente. Erros específicos do domínio usam prefixo `WEBHOOK_`. Cada processo cria seu próprio PrismaClient. [09:27–09:30] Bruno, Diego e Larissa.
+Criar o módulo planejado `src/modules/webhooks` no mesmo padrão, com processador do worker no módulo e entry point planejado `src/worker.ts`. Reusar Zod, `AppError`, middleware, Pino e autenticação existente. Erros específicos do domínio usam prefixo `WEBHOOK_`. Cada processo cria seu próprio PrismaClient.
 
 ## Alternativas consideradas
-- Introduzir stack ou tratamento de erros próprio: duplicaria padrões já disponíveis e foi afastado pelo objetivo explícito de reuso. [09:29–09:30] Bruno e Larissa.
+- Introduzir stack ou tratamento de erros próprio: duplicaria padrões já disponíveis e foi afastado pelo objetivo explícito de reuso.
 
 ## Consequências
 - Positiva: integração e operação seguem convenções já conhecidas.

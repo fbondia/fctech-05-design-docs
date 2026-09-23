@@ -42,8 +42,8 @@ Corrija os documentos e atualize TRACKER.md com a origem de cada item.
 
 Foram **três ciclos principais**: (1) extração e ADRs; (2) RFC/PRD/FDD; (3) revisão cruzada e rastreabilidade. Os ajustes concretos mais importantes foram:
 
-- A primeira leitura da fala de [09:31] poderia tratar `customer_id` como implícito no JWT. O código em `src/middlewares/auth.middleware.ts` e a correção de Larissa em [09:32] mostram que o token só carrega usuário e role. O RFC e o FDD passaram a expor a regra de autorização por cliente como pendente.
-- A política de [09:17] cita “5 tentativas” junto de cinco intervalos. Em vez de codificar silenciosamente seis envios ou descartar um intervalo, o ADR-003, RFC e FDD registram a ambiguidade e pedem confirmação antes da implementação.
+- A primeira leitura poderia tratar `customer_id` como implícito no JWT. O código em `src/middlewares/auth.middleware.ts` e a correção de Larissa na reunião mostram que o token só carrega usuário e role. O RFC e o FDD passaram a expor a regra de autorização por cliente como pendente.
+- A política discutida cita “5 tentativas” junto de cinco intervalos. Em vez de codificar silenciosamente seis envios ou descartar um intervalo, o ADR-003, RFC e FDD registram a ambiguidade e pedem confirmação antes da implementação.
 - Os exemplos HTTP exigidos pelo FDD usam caminhos e status propostos quando a reunião decidiu a operação, mas não o formato exato. Eles foram rotulados como proposta para não virar falso requisito.
 
 ## Como navegar a entrega

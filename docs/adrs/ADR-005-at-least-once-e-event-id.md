@@ -6,13 +6,13 @@
 Decidido na reunião; aguardando revisão do RFC.
 
 ## Contexto
-O worker pode reenviar um evento quando uma resposta de sucesso se perde ou após falha temporária. [09:24–09:26] Diego.
+O worker pode reenviar um evento quando uma resposta de sucesso se perde ou após falha temporária.
 
 ## Decisão
-Garantir entrega at-least-once e enviar o UUID criado na outbox em `X-Event-Id`. O consumidor deduplica pelo identificador. [09:25–09:26] Diego e Larissa.
+Garantir entrega at-least-once e enviar o UUID criado na outbox em `X-Event-Id`. O consumidor deduplica pelo identificador.
 
 ## Alternativas consideradas
-- Exactly-once entre dois sistemas: exigiria coordenação entre produtor e consumidor e foi descartado pela complexidade. [09:25] Diego.
+- Exactly-once entre dois sistemas: exigiria coordenação entre produtor e consumidor e foi descartado pela complexidade.
 
 ## Consequências
 - Positiva: retry não depende de protocolo distribuído de confirmação.

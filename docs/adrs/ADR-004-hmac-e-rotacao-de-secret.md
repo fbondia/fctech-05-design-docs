@@ -6,14 +6,14 @@
 Decidido na reunião; aguardando revisão do RFC.
 
 ## Contexto
-Pedidos serão enviados para fora da infraestrutura, exigindo autenticação de origem e integridade do corpo. Uma secret global ampliaria o impacto de vazamento. [09:19–09:21] Sofia.
+Pedidos serão enviados para fora da infraestrutura, exigindo autenticação de origem e integridade do corpo. Uma secret global ampliaria o impacto de vazamento.
 
 ## Decisão
-Assinar o corpo enviado com HMAC-SHA256 e publicar a assinatura em `X-Signature`. Cada endpoint possui secret própria. A API permite rotação; a secret anterior continua válida por 24 horas e então expira. Exigir HTTPS e recusar payload acima de 64 KB. [09:20–09:24] Sofia, Diego e Larissa.
+Assinar o corpo enviado com HMAC-SHA256 e publicar a assinatura em `X-Signature`. Cada endpoint possui secret própria. A API permite rotação; a secret anterior continua válida por 24 horas e então expira. Exigir HTTPS e recusar payload acima de 64 KB.
 
 ## Alternativas consideradas
-- Secret global: um vazamento comprometeria todos os endpoints. [09:21] Sofia.
-- HTTP sem TLS: explicitamente recusado na validação da URL. [09:23] Sofia.
+- Secret global: um vazamento comprometeria todos os endpoints.
+- HTTP sem TLS: explicitamente recusado na validação da URL.
 
 ## Consequências
 - Positiva: comprometimento de uma secret fica limitado ao endpoint e a rotação permite migração.
