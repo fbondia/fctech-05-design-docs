@@ -14,7 +14,7 @@ Os documentos separam problema de produto, proposta arquitetural, decisões pont
 ## Workflow adotado
 
 1. Clonar o fork e ler o enunciado e a transcrição integralmente.
-2. Inspecionar `OrderService.changeStatus`, schema Prisma, autenticação, erros, rotas e logger para distinguir fatos do código de intenções da reunião.
+2. Inspecionar `OrderService.changeStatus`, schema Prisma, autenticação, erros, rotas e logger para distinguir fatos do código de intenções da reunião. Registrar as fontes em [EVIDENCIAS.md](docs/EVIDENCIAS.md).
 3. Classificar falas como decisões, requisitos, alternativas descartadas, exclusões e lacunas. Criar primeiro os seis ADRs.
 4. Consolidar o RFC em nível de arquitetura; elaborar o PRD em nível de produto e o FDD com fluxos e contratos propostos.
 5. Construir o tracker com origem para cada grupo de itens e revisar coerência entre os documentos. O README registra o processo após essa revisão.
@@ -53,5 +53,6 @@ Foram **três ciclos principais**: (1) extração e ADRs; (2) RFC/PRD/FDD; (3) r
 3. [ADRs](docs/adrs/README.md): seis decisões isoladas e seus trade-offs.
 4. [FDD](docs/FDD.md): fluxos, contratos, erros e integração com o código.
 5. [Tracker](docs/TRACKER.md): origem de cada item identificável.
+6. [Auditoria](docs/AUDITORIA.md): checklist final, contagens e limites da entrega.
 
 A reunião original permanece em [TRANSCRICAO.md](TRANSCRICAO.md).

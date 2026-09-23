@@ -1,5 +1,7 @@
 # ADR-001 — Outbox transacional no MySQL
 
+**Evidências do [inventário](../EVIDENCIAS.md):** T-04, T-05, T-06, T-37, T-44, T-45; C-01, C-03.
+
 ## Status
 Decidido na reunião; aguardando revisão do RFC.
 
@@ -16,4 +18,3 @@ Inserir um evento com UUID e payload congelado em `webhook_outbox`, na mesma tra
 ## Consequências
 - Positiva: mudança de status e registro do evento são atômicos.
 - Negativa: há escrita adicional na transação e operação de uma tabela de outbox; a entrega continua assíncrona e sujeita a falhas posteriores.
-

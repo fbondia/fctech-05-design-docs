@@ -1,5 +1,7 @@
 # ADR-002 — Worker separado com polling
 
+**Evidências do [inventário](../EVIDENCIAS.md):** T-07, T-09, T-10, T-11, T-12, T-13; C-09, C-13.
+
 ## Status
 Decidido na reunião; aguardando revisão do RFC.
 

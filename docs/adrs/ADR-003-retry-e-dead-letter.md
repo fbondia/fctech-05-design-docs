@@ -1,5 +1,7 @@
 # ADR-003 — Retry com backoff e dead letter
 
+**Evidências do [inventário](../EVIDENCIAS.md):** T-14, T-15, T-16, T-17, T-18.
+
 ## Status
 Decidido na reunião; semântica da contagem de tentativas pendente de confirmação.
 
@@ -19,4 +21,3 @@ Usar backoff de 1 min, 5 min, 30 min, 2 h e 12 h e limite anunciado de cinco ten
 ## Consequências
 - Positiva: falhas transitórias recebem nova chance e falhas permanentes ficam visíveis.
 - Negativa: entrega pode atrasar por horas; há armazenamento e operação de replay a manter.
-

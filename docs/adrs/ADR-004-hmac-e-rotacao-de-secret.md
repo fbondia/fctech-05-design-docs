@@ -1,5 +1,7 @@
 # ADR-004 — HMAC por endpoint e rotação de secret
 
+**Evidências do [inventário](../EVIDENCIAS.md):** T-19, T-20, T-21, T-22.
+
 ## Status
 Decidido na reunião; aguardando revisão do RFC.
 
@@ -16,4 +18,3 @@ Assinar o corpo enviado com HMAC-SHA256 e publicar a assinatura em `X-Signature`
 ## Consequências
 - Positiva: comprometimento de uma secret fica limitado ao endpoint e a rotação permite migração.
 - Negativa: armazenamento e distribuição seguros da secret e convivência temporária de duas versões exigem cuidado; a assinatura deve usar os bytes exatos do corpo enviado.
-

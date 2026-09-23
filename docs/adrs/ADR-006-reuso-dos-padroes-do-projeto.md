@@ -1,5 +1,7 @@
 # ADR-006 — Reuso dos padrões do projeto
 
+**Evidências do [inventário](../EVIDENCIAS.md):** T-25, T-26, T-27; C-04 a C-11.
+
 ## Status
 Decidido na reunião; aguardando revisão do RFC.
 
